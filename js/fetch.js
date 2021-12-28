@@ -1,16 +1,14 @@
 
-export function getFetch(){
-    Promise.all([
-        fetch("/json/land.JSON").then(response => response.json()),
-        fetch("/json/stad.JSON").then(response => response.json())
-    ])
-        .then(data => {
-    
-            printCountriesAndCitys(data[0], data[1])
-        })
-    
-    function printCountriesAndCitys(countries, citys) {
-        console.log("lyckades jag", countries)
-        console.log("eller?", citys)
-    }
-    }
+export async function getContries() {
+    const response = await fetch("/json/land.JSON");
+    const contries = await response.json();
+    return contries;
+}
+export async function getCitys() {
+    const response = await fetch("/json/stad.JSON");
+    const citys = await response.json();
+    return citys;
+}
+
+
+
