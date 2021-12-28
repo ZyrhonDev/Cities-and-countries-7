@@ -1,6 +1,6 @@
 //clicka på en stad med evt.target.id
 //eventlistner till ul?
-
+function clickCity(){
 addEventListener("click", (evt) => {
     console.log(evt)
     switch (evt) {
@@ -53,3 +53,4 @@ addEventListener("click", (evt) => {
             break;
     }
 })
+}
