@@ -1,25 +1,32 @@
-/* 
-Importera moduler
-*/
-import { getContries, getCitys } from './fetch.js';
-getContries().then(contries => {
-        console.log("länder", contries)     
-});
-getCitys().then(citys => {
-        console.log("städer", citys)
-        navBar.addEventListener ("click", function (evt) {
-                console.log(evt.target.id);
-                for (let i = 0; i < citys.length; i++) {
-                        if (evt.target.id == citys[i].id) {
-                                mainText.innerHTML = "";
-                                mainText.innerText = "invånarantal: " + citys[i].population;
-                        }
-                }
-        })
-});
+// ###########################
+// ## IMPORTERA MODULES HIT ##
+// ###########################
+import { renderCountries } from './nav.js';
+import { visitedCountries } from './visited.js';
+import { addVisitedCountry } from './addVisited.js';
+import { getCountries, getCities } from './fetch.js';
 
-import { printCountries } from './nav.js';
-
-const navBar = document.getElementById ("navBar");
-const mainText = document.getElementById ("siteMain");
+// #######################################
+// ## Använd funktioner med fetchen här ##
+// #######################################
+getCountries().then(countries => {
+        console.log("länder: ", countries);
+        // Använder renderCountries ifrån nav.js, importeras på rad 4. Skickar in countries från fetchen som data att använda.
+        renderCountries(countries);    
+});
+getCities().then(cities => {
+        console.log("städer: ", cities)
+        // #########################################################
+        // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
+        // #########################################################
+        // navBar.addEventListener ("click", function (evt) {
+        //         console.log(evt.target.id);
+        //         for (let i = 0; i < cities.length; i++) {
+        //                 if (evt.target.id == cities[i].id) {
+        //                         mainText.innerHTML = "";
+        //                         mainText.innerText = "invånarantal: " + cities[i].population;
+        //                 }
+        //         }
+        // })
+});
 
