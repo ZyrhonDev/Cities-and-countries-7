@@ -13,7 +13,7 @@ export function addVisitedCity() {
         visitedCities = JSON.parse(getCityList);
     }
 
-    visitedCountries.push(selectedCity);
+    visitedCities.push(selectedCity);
     localStorage.setItem("cityList", JSON.stringify(visitedCities));
     })
 }
