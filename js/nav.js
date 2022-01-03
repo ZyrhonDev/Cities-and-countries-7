@@ -18,7 +18,8 @@ export function renderCountries(countries) {
 
     countries.forEach((country) =>  {
         let countryItem = document.createElement("li")
-        countryItem.id = country.id
+        countryItem.className = "navCountry";
+        countryItem.id = country.countryname
         countryItem.innerText = country.countryname
         countryList.append(countryItem)
     })
