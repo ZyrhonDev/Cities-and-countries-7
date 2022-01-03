@@ -21,20 +21,24 @@ export function wikiApi() {
             function cityInfo(infoObject) {
                 let cityInfoContainer = document.getElementById("siteMain");   
                     cityInfoContainer.innerHTML ="";
-                let cityText = document.createElement("article");
+                let cityText = document.createElement("article")
+                    cityText.style.cssText = "position: absolute; top: 3rem; right: 15rem; width: 50rem;"; 
                     cityText.innerText = infoObject.extract;
                     cityText.className = "city-info";
 
                 //Hämtar original bildens bredd och höjd, för att behålla aspect ratio
                 //Delar på 5 för att få en mindre bild 
                 // let width = infoObject.originalimage.width;
-                // let height = infoObject.originalimage.height;    
+                // let height = infoObject.originalimage.height; 
+                let conatinerOfPic = document.createElement("div") ;  
                 let cityPic = new Image();
                     cityPic.src = infoObject.originalimage.source;
+                    conatinerOfPic.style.cssText = "position: absolute; top: 26rem; left: 40rem; width: 50rem;"; 
                     cityPic.className = "city-pic";
-                cityInfoContainer.append(cityText, cityPic);
-
-            
+                    conatinerOfPic.append(cityPic)
+                    cityInfoContainer.append(cityText, conatinerOfPic);
+                
+                
                 
             // console.log(infoObject.extract)
             // console.log(infoObject.originalimage)
