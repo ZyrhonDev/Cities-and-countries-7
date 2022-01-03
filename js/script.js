@@ -25,7 +25,7 @@ getCities().then(cities => {
 
         addCities(cities);
         visitedCities(cities)
-        // addVisitedCity(cities)
+        addVisitedCity(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##

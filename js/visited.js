@@ -6,7 +6,6 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 
 
 export function visitedCities(cities) {
-
     visitedBtn.addEventListener ("click", function() {
         console.log("hej")
         siteMain.innerHTML = "";
@@ -17,7 +16,7 @@ export function visitedCities(cities) {
         let cityList = document.createElement ("ul");
         siteMain.append (totalPopulation);
 
-        for (i = 0; i < cities.length; i++) {
+        for (let i = 0; i < cities.length; i++) {
             if(getCityList == cities[i].id) {
                 let listCity = document.createElement ("li");
                 listCity.innerText = cities[i].stadname;
