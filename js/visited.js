@@ -3,11 +3,12 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 */
 
 // Hämtar "besökta länder" knappen med getElementById samt main på samma sätt.
-const visitedBtn = document.getElementById ("visitedBtn");
-const siteMain = document.getElementById ("siteMain");
+
 
 export function visitedCities(cities) {
+
     visitedBtn.addEventListener ("click", function() {
+        console.log("hej")
         siteMain.innerHTML = "";
         
         let getCityList = localStorage.getItem("cityList");

@@ -1,3 +1,6 @@
+
+
+
 // ###########################
 // ## IMPORTERA MODULES HIT ##
 // ###########################
@@ -21,6 +24,8 @@ getCities().then(cities => {
         console.log("städer: ", cities)
 
         addCities(cities);
+        visitedCities(cities)
+        // addVisitedCity(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
