@@ -1,11 +1,15 @@
 // Hämtar "besökt land" knappen med getElementById
-const addVisited = document.getElementById ("addVisitedBtn");
-
-const visitedCities = [];
-const selectedCity = document.getElementById ("countryName");
-
-//Eventlistener på "besökt land" knappen
 export function addVisitedCity() {
+    const addVisited = document.createElement ("button");
+    addVisited.textContent = "Lägg till"
+    addVisited.id = "addVisited"
+    addVisited.style.cssText = "position: absolute; top: 1rem; right: 1rem;"; 
+
+    const visitedCities = [];
+    const selectedCity = document.getElementById ("countryName");
+
+    siteMain.append(addVisited)
+//Eventlistener på "besökt land" knappen
     addVisited.addEventListener ("click", function() {
     let getCityList = localStorage.getItem("cityList");
 

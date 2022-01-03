@@ -3,15 +3,16 @@
 // #########################################################################################
 body {
     background-color: grey;
+    margin: 0; 
+    position: relative;
 }
 
 nav {
     position: fixed;
-    left: 5rem;
+    background-color:rgb(230, 119, 119);
     width: fit-content;
+    height: 100vh;
     border: 1px solid black;
-    padding: 0.5em;
-    margin: 0;
     background-color: indianred;
     ul {
         cursor: pointer;
@@ -21,10 +22,10 @@ nav {
         list-style-type: none;
 
         .navCountry{
-            font-size: 2.5rem;
+            font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
             ul{
-
+                
                 .city{
                     font-size: 1.5rem;
                     background-color: rgb(230, 119, 119);
@@ -33,18 +34,24 @@ nav {
         }
     }
 }
-
+li{
+   border: 1px solid black; 
+   padding: 0.5rem 2.5rem;
+}
 main {
-    background-color: rgb(56, 128, 50);
+ 
     color: white;
-    width: 60%;
-    height: 95vh;
-    border: 1px solid black;
+    height: 100vh;
     margin: auto;
-    position: relative;
-    font-size: 1.5rem;
-
-
+}
+button{
+    padding: 0.5rem 2.5rem;
+    background-color: indianred;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    
+}
     .city-info{
         position: relative;
         top: 3em;
@@ -61,4 +68,4 @@ main {
         transform: translate(-50%, -50%);
         
     }
-}
+
