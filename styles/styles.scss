@@ -43,6 +43,7 @@ li ul li{
 main {
     color: white;
     height: 100vh;
+
 }
 button{
     padding: 0.5rem 2.5rem;
@@ -64,8 +65,8 @@ button{
     .city-pic{
         position: absolute;
         width: 50%;
-        top: 30rem;
-        right: 0rem;
+        height: 30rem;
+        object-fit:contain;
         transform: translate(-50%, -50%);
         
     }
