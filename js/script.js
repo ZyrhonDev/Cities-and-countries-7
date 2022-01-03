@@ -9,7 +9,7 @@ import { visitedCities } from './visited.js';
 import { addVisitedCity } from './addVisited.js';
 import { getCountries, getCities } from './fetch.js';
 import { addCityContainer, addCities, toggleCityView } from './clickOnCountry.js';
-
+import { wikiApi } from './wikiApi.js';
 
 // #######################################
 // ## Använd funktioner med fetchen här ##
@@ -45,3 +45,9 @@ getCities().then(cities => {
 setTimeout(function(){
     toggleCityView()
 },200)
+
+
+
+setTimeout(function(){
+    wikiApi()
+},205)

@@ -52,3 +52,20 @@ button{
     font-size: 1rem;
     
 }
+    .city-info{
+        position: relative;
+        top: 3em;
+        margin-left: 2em;
+        margin-right: 2em;
+        
+    }
+
+    .city-pic{
+        position: relative;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
