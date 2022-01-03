@@ -8,24 +8,36 @@ body {
 nav {
     position: fixed;
     left: 5rem;
-    width: 10%;
+    width: fit-content;
     border: 1px solid black;
-    padding: 0;
+    padding: 0.5em;
     margin: 0;
-
+    background-color: indianred;
     ul {
         cursor: pointer;
         padding: 0;
         margin: 0;
         text-align: center;
         list-style-type: none;
+
+        .navCountry{
+            font-size: 2.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+            ul{
+
+                .city{
+                    font-size: 1.5rem;
+                    background-color: rgb(230, 119, 119);
+                }
+            }
+        }
     }
 }
 
 main {
-    background-color: rgb(114, 85, 53);
+    background-color: rgb(56, 128, 50);
     color: white;
-    width: 70%;
+    width: 60%;
     height: 95vh;
     border: 1px solid black;
     margin: auto;
