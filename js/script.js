@@ -2,8 +2,8 @@
 // ## IMPORTERA MODULES HIT ##
 // ###########################
 import { renderCountries } from './nav.js';
-import { visitedCountries } from './visited.js';
-import { addVisitedCountry } from './addVisited.js';
+import { visitedCities } from './visited.js';
+import { addVisitedCity } from './addVisited.js';
 import { getCountries, getCities } from './fetch.js';
 
 // #######################################

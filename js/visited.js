@@ -6,19 +6,23 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 const visitedBtn = document.getElementById ("visitedBtn");
 const siteMain = document.getElementById ("siteMain");
 
-export function visitedCountries() {
+export function visitedCities(cities) {
     visitedBtn.addEventListener ("click", function() {
         siteMain.innerHTML = "";
-        localStorage.getItem("countryList");
+        
+        let getCityList = localStorage.getItem("cityList");
 
-        let totalPopulation = document.createElement ("li");
-        let countryList = document.createElement ("ul");
+        let totalPopulation = document.createElement ("h3");
+        let cityList = document.createElement ("ul");
+        siteMain.append (totalPopulation);
 
-        for (i = 0; i < countryList.length; i++) {
-            let listCountry = document.createElement ("li");
-            listCountry.innerText = countryList[i];
-            totalPopulation.innerText += "Invånarantal " + countryList[i].population;
-            countryList.append (listCountry);
+        for (i = 0; i < cities.length; i++) {
+            if(getCityList == cities[i].id) {
+                let listCity = document.createElement ("li");
+                listCity.innerText = cities[i].stadname;
+                totalPopulation.innerText += "Invånarantal " + cities[i].population;
+                cityList.append (listCity);
+            }
         }
     })
 }
