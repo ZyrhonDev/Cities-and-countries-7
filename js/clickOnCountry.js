@@ -48,15 +48,19 @@ export function toggleCityView() {
 
     listCountries.forEach(element => {
         element.addEventListener("click", (e) => {  
-            let userChoice = e.target.firstElementChild.id;
-            // console.log(userChoice)   
-            let targetCountry = document.getElementById(userChoice);
-            
-            if (targetCountry.style.display == "none") {
-                targetCountry.style.display = "block";
-            } else {
-                targetCountry.style.display = "none";
-            }                                    
+            if (e.target.firstElementChild){
+                let userChoice = e.target.firstElementChild.id;
+                console.log(userChoice)   
+                let targetCountry = document.getElementById(userChoice);
+                
+                if (targetCountry.style.display == "none") {
+                    targetCountry.style.display = "block";
+                } else {
+                    targetCountry.style.display = "none";
+                }  
+
+            };
+                                  
         });
     });
 };  
