@@ -41,4 +41,24 @@ main {
     height: 95vh;
     border: 1px solid black;
     margin: auto;
+    position: relative;
+    font-size: 1.5rem;
+
+
+    .city-info{
+        position: relative;
+        top: 3em;
+        margin-left: 2em;
+        margin-right: 2em;
+        
+    }
+
+    .city-pic{
+        position: relative;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
 }
