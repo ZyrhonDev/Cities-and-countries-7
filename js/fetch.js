@@ -1,13 +1,13 @@
 
-export async function getContries() {
+export async function getCountries() {
     const response = await fetch("/json/land.JSON");
-    const contries = await response.json();
-    return contries;
+    const countries = await response.json();
+    return countries;
 }
-export async function getCitys() {
+export async function getCities() {
     const response = await fetch("/json/stad.JSON");
-    const citys = await response.json();
-    return citys;
+    const cities = await response.json();
+    return cities;
 }
 
 

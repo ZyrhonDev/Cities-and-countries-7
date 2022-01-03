@@ -1,0 +1,32 @@
+// #########################################################################################
+// ## PLACEHOLDER CSS FÖR ATT LÄTTARE SE ALLT I FÖRHÅLLANDE TILL VARANDRA MED BORDERS OSV ##
+// #########################################################################################
+body {
+    background-color: grey;
+}
+
+nav {
+    position: fixed;
+    left: 5rem;
+    width: 10%;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+
+    ul {
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+    }
+}
+
+main {
+    background-color: rgb(114, 85, 53);
+    color: white;
+    width: 70%;
+    height: 95vh;
+    border: 1px solid black;
+    margin: auto;
+}
