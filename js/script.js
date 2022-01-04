@@ -16,7 +16,7 @@ import { addCityInfoWrapper } from './clickOnCity.js';
 // #######################################
 getCountries().then(countries => {
         console.log("länder: ", countries);
-        // Använder renderCountries ifrån nav.js, importeras på rad 4. Skickar in countries från fetchen som data att använda.
+        // Använder renderCountries ifrån nav.js, importeras på rad 7. Skickar in countries från fetchen som data att använda.
         renderCountries(countries);   
         addCityContainer(countries); 
 });
@@ -25,9 +25,9 @@ getCities().then(cities => {
 
         addCities(cities);
         visitedCities(cities)
-        addVisitedCity(cities)
         toggleCityView(cities)
         addCityInfoWrapper(cities)
+        addVisitedCity(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
