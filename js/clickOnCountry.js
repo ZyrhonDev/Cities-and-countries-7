@@ -1,9 +1,3 @@
-// import {getContries, getCitys} from './fetch.js';
-
-//=================================================================================
-//=====OBS! Alla setTiemout borde ändras till await eller annan bättre lösning=====
-//=================================================================================
-
 
 export function addCityContainer(countries) {
 
@@ -29,6 +23,7 @@ export function addCities(cities) {
         let cityName = document.createElement("li");    
             cityName.innerText = cities[j].stadname;
             cityName.className = "city";
+            cityName.id = cities[j].stadname
         let y = cities[j].countryid;
         let country = document.getElementById(y)                
 
@@ -37,7 +32,6 @@ export function addCities(cities) {
             country.append(cityName) 
         } 
     }
-
 }
 
     
