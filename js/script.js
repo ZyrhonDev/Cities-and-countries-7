@@ -9,7 +9,7 @@ import { visitedCities } from './visited.js';
 import { addVisitedCity } from './addVisited.js';
 import { getCountries, getCities } from './fetch.js';
 import { addCityContainer, addCities, toggleCityView } from './clickOnCountry.js';
-import { wikiApi } from './wikiApi.js';
+import { addCityInfoWrapper } from './clickOnCity.js';
 
 // #######################################
 // ## Använd funktioner med fetchen här ##
@@ -27,7 +27,7 @@ getCities().then(cities => {
         visitedCities(cities)
         addVisitedCity(cities)
         toggleCityView(cities)
-        wikiApi(cities)
+        addCityInfoWrapper(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
