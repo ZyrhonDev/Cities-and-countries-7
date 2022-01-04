@@ -29,13 +29,12 @@ export async function wikiApi() {
                 //Delar på 5 för att få en mindre bild 
                 // let width = infoObject.originalimage.width;
                 // let height = infoObject.originalimage.height; 
-                let conatinerOfPic = document.createElement("div");  
+                 
                 let cityPic = new Image();
                     cityPic.src = infoObject.originalimage.source;
-                    conatinerOfPic.style.cssText = "position: absolute; top: 26rem; left: 40rem; width: 50rem;"; 
                     cityPic.className = "city-pic";
-                    conatinerOfPic.append(cityPic)
-                    cityInfoContainer.append(cityText, conatinerOfPic);
+                    cityInfoContainer.append(cityText, cityPic)
+                   
                 
                 
                 
