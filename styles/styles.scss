@@ -59,15 +59,8 @@ button{
         width: 50vw;
         left: 20rem;
         margin-right: 2em;
-        
+        transform: translate(-50%, -50%);
     }
 
-    .city-pic{
-        position: absolute;
-        width: 50%;
-        height: 30rem;
-        object-fit:contain;
-        transform: translate(-50%, -50%);
-        
-    }
+
 

@@ -21,8 +21,7 @@ export async function wikiApi() {
             function cityInfo(infoObject) {
                 let cityInfoContainer = document.getElementById("siteMain");   
                     cityInfoContainer.innerHTML ="";
-                let cityText = document.createElement("article")
-                    cityText.style.cssText = "position: absolute; top: 3rem; right: 15rem; width: 50rem;"; 
+                let cityText = document.createElement("article") 
                     cityText.innerText = infoObject.extract;
                     cityText.className = "city-info";
 
@@ -30,7 +29,7 @@ export async function wikiApi() {
                 //Delar på 5 för att få en mindre bild 
                 // let width = infoObject.originalimage.width;
                 // let height = infoObject.originalimage.height; 
-                let conatinerOfPic = document.createElement("div") ;  
+                let conatinerOfPic = document.createElement("div");  
                 let cityPic = new Image();
                     cityPic.src = infoObject.originalimage.source;
                     conatinerOfPic.style.cssText = "position: absolute; top: 26rem; left: 40rem; width: 50rem;"; 
