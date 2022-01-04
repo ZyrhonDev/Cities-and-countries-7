@@ -8,7 +8,7 @@ export function addVisitedCity() {
     const visitedCities = [];
     const selectedCity = document.getElementById ("countryName");
 
-    siteMain.append(addVisited)
+    body.document.append(addVisited)
 //Eventlistener på "besökt land" knappen
     addVisited.addEventListener ("click", function() {
     let getCityList = localStorage.getItem("cityList");
