@@ -26,6 +26,8 @@ getCities().then(cities => {
         addCities(cities);
         visitedCities(cities)
         addVisitedCity(cities)
+        toggleCityView(cities)
+        wikiApi(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
@@ -41,13 +43,3 @@ getCities().then(cities => {
         // })
 });
 
-//Borde lösas med async ist
-setTimeout(function(){
-    toggleCityView()
-},200)
-
-
-
-setTimeout(function(){
-    wikiApi()
-},205)
