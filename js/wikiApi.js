@@ -1,4 +1,4 @@
-export function wikiApi() {
+export async function wikiApi() {
 
     //Selektar alla ellement med classen cityClass (så alla städer)
     let listItems = document.querySelectorAll(".city");
@@ -12,7 +12,7 @@ export function wikiApi() {
             let userChoice = e.target.textContent
 
             //Fetchar wiki api och ersätter sista delen i adressen med stadsnamnet man har clickat på
-            fetch("https://en.wikipedia.org/api/rest_v1/page/summary/" + userChoice)
+             fetch("https://en.wikipedia.org/api/rest_v1/page/summary/" + userChoice)
             .then((response) => response.json())
             .then((data) => cityInfo(data));
 

@@ -42,7 +42,7 @@ export function addCities(cities) {
 
     
        
-export function toggleCityView() {
+export async function toggleCityView() {
 
     let listCountries = document.querySelectorAll(".navCountry");
 
