@@ -78,3 +78,13 @@ h2 {
     text-align: center;
     margin-bottom: 3%;
 }
+
+.weather-icon {
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.weather-description {
+    text-transform: uppercase;
+}
