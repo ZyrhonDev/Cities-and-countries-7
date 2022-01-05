@@ -1,4 +1,5 @@
 import { wikiApi } from './wikiApi.js';
+import { weatherApi } from './weatherApi.js';
 
 export async function addCityInfoWrapper(cities) {
     // let populationContainer = document.createElement("div");
@@ -54,6 +55,9 @@ export async function addCityInfoWrapper(cities) {
             
 
             //Väder API
+            fetch("http://api.openweathermap.org/data/2.5/weather?q=" + userChoice + "&units=metric&appid=bee75b3917b784276ddbd6f1ae2a4057" )
+            .then((response) => response.json())
+            .then((data) => weatherApi(data));
 
 
             //Besökt knapp
