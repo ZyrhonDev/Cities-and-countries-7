@@ -2,27 +2,40 @@
 Tar alla städers ID ifrån localStorage och visar städernas namn samt alla invånarantal ihopräknat. 
 */
 
-// Hämtar "besökta länder" knappen med getElementById samt main på samma sätt.
-const populationContainer = document.getElementById ("populationContainer");
-const weatherContainer = document.getElementById ("weatherContainer");
-const infoContainer = document.getElementById ("infoContainer");
-const picContainer = document.getElementById ("picContainer");
-
+// ################################################################################################
+// ##     FÖRSÖKTE FÅ DE BESÖKTA LÄNDERNA ATT PRINTAS TILL INFOCONTAINER MEN VERKAR INTE FUNKA   ##
+// ##   OM JAG HAR SITEMAIN.INNERHTML = "" FÖR ATT RENSA(GÖRA NY SIDA FÖR BESÖKTA STÄDER VYN)    ##
+// ## SÅ FUNKAR INTE MENYKNAPPARNA FÖR DE OLIKA STÄDERNA LÄNGRE, FÖR ATT CONTAINRARNA FÖRSVINNER ##
+// ################################################################################################
+// let populationContainer = document.getElementById ("populationContainer");
+// let weatherContainer = document.getElementById ("weatherContainer");
+// let infoContainer = document.getElementById ("infoContainer");
+// let picContainer = document.getElementById ("picContainer");
+const siteMain = document.getElementById ("siteMain");
 export function visitedCities(cities) {
     visitedBtn.addEventListener ("click", function() {
 
         let getCityList = localStorage.getItem("cityList");
-        console.log(getCityList);
+        let getCities = [];
+        getCities = JSON.parse(getCityList);
+
+        console.log("storage listan: " + getCityList);
         let totalPopulation = document.createElement ("h3");
         let cityList = document.createElement ("ul");
+        let populationAddition = 0;
         siteMain.append (totalPopulation, cityList);
 
+for (let i = 0; i < getCities.length; i++) {
+    let cityId = getCities[i];
+    console.log(getCities[i]);
         for (let r = 0; r < cities.length; r++) {
-            for (let i = 0; i < getCityList.length; i++) {
-                if(getCityList[i] == cities[r].id) {
+            let getCityId = cities[r].id;
+                if(cityId == getCityId) {
                     let listCity = document.createElement ("li");
-                        listCity.innerText = cities[r].stadname;
-                    totalPopulation.innerText += "Invånarantal " + cities[r].population;
+                        listCity.textContent = cities[r].stadname;
+                    let totalPop = cities[r].population;
+                    populationAddition += totalPop;
+                    totalPopulation.textContent = populationAddition;
                     cityList.append (listCity);
                 }
             }
