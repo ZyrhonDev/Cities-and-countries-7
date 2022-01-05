@@ -2,8 +2,8 @@ export async function wikiApi(infoObject) {
     
     //.extract och .originalimage.source är texten resp bilden från "wiki api json"
     // function cityInfo(infoObject) {
-        
-        let cityInfoContainer = document.getElementById("infoContainer"); 
+        let siteMain = document.getElementById("siteMain");
+        // let cityInfoContainer = document.getElementById("infoContainer"); 
             // cityInfoContainer.innerHTML=""; 
         let cityText = document.createElement("article")
             cityText.innerText = infoObject.extract;
@@ -18,7 +18,7 @@ export async function wikiApi(infoObject) {
             cityPic.src = infoObject.originalimage.source;
             
             cityPic.className = "city-pic";
-            cityInfoContainer.append(cityText, cityPic);
+            siteMain.append(cityText, cityPic);
             
     // console.log(infoObject.extract)
     // console.log(infoObject.originalimage)
