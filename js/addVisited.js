@@ -9,35 +9,36 @@ export function addVisitedCity(cities) {
     // Hämta localStorage och OM det redan finns något i den så parsar den och sparas i visitedCities, så vi kan lägga till saker efter det som redan finns.
     
     
-   
    function getListFromLS() {
-    let getCityList = localStorage.getItem("cityList");
+    let visitedCities = JSON.parse(localStorage.getItem("cityList"))
 
-    let visitedCities = [];
-
-    if (getCityList) {
-        visitedCities = JSON.parse(getCityList);
+        if (visitedCities == null) {
+            visitedCities = [];
+        } 
+        return visitedCities;
     }
-    return visitedCities;
-   }
 
-   let visitedCities = getListFromLS();
+    let visitedCities = getListFromLS()
 
 // ########################################################################
 // ## LÄGGER TILL STÄDERS ID I LOCALSTORAGE, DUBLETTER KAN DOCK FÖREKOMMA##
 // ########################################################################
     addVisited.addEventListener ("click", function() {
-        
     let selectedCity = localStorage.getItem("selectedCity");
 
-    for (let p = 0; p < cities.length; p++) {
-        if (selectedCity == cities[p].stadname) {
-            visitedCities.push(cities[p].id)
-            console.log(visitedCities);
-            localStorage.setItem("cityList", JSON.stringify(visitedCities));
-            
+    cities.find((city) => {
+        if(selectedCity == city.stadname){
+            let cityToPush = city.id
+
+            let cityExist = visitedCities.find(visitedCity => visitedCity == cityToPush)
+
+            if(!cityExist){
+                visitedCities.push(cityToPush)
+                localStorage.setItem("cityList", JSON.stringify(visitedCities))
+            }
         }
-    }
+    })
+
     // visitedCities.push(selectedCity);
     // localStorage.setItem("cityList", JSON.stringify(visitedCities));
     })
