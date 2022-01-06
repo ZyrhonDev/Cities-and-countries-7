@@ -13,21 +13,21 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 // let picContainer = document.getElementById ("picContainer");
 const siteMain = document.getElementById ("siteMain");
 export function visitedCities(cities) {
+
     visitedBtn.addEventListener ("click", function() {
+        let getCities = JSON.parse(localStorage.getItem("cityList"));
 
-        let getCityList = localStorage.getItem("cityList");
-        let getCities = [];
-        getCities = JSON.parse(getCityList);
-
-        console.log("storage listan: " + getCityList);
+        console.log("storage listan: " + getCities);
         let totalPopulation = document.createElement ("h3");
         let cityList = document.createElement ("ul");
         let populationAddition = 0;
-        siteMain.append (totalPopulation, cityList);
+        siteMain.innerHTML = ""
+        siteMain.append(totalPopulation, cityList);
 
-for (let i = 0; i < getCities.length; i++) {
-    let cityId = getCities[i];
-    console.log(getCities[i]);
+        for (let i = 0; i < getCities.length; i++) {
+        let cityId = getCities[i];
+        console.log(getCities[i]);
+
         for (let r = 0; r < cities.length; r++) {
             let getCityId = cities[r].id;
                 if(cityId == getCityId) {
@@ -36,7 +36,7 @@ for (let i = 0; i < getCities.length; i++) {
                     let totalPop = cities[r].population;
                     populationAddition += totalPop;
                     totalPopulation.textContent = populationAddition;
-                    cityList.append (listCity);
+                    cityList.append(listCity);
                 }
             }
         }
