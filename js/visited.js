@@ -19,7 +19,6 @@ export function visitedCities(cities) {
         let getCities = [];
         getCities = JSON.parse(getCityList);
 
-        console.log("storage listan: " + getCityList);
         let totalPopulation = document.createElement ("h3");
         let cityList = document.createElement ("ul");
         let populationAddition = 0;
