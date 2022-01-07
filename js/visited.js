@@ -14,6 +14,8 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 const siteMain = document.getElementById ("siteMain");
 export function visitedCities(cities) {
     visitedBtn.addEventListener ("click", function() {
+        let visitedContainer = document.createElement("div")
+        visitedContainer.id = "visitedContainer"
         siteMain.innerHTML=""
         let getCityList = localStorage.getItem("cityList");
         let getCities = [];
@@ -25,7 +27,8 @@ export function visitedCities(cities) {
         let clearCitiesBtn = document.createElement("button")
         clearCitiesBtn.id = "clearCitiesBtn"
 
-        siteMain.append (totalPopulation, cityList, clearCitiesBtn);
+        visitedContainer.append (totalPopulation, cityList, clearCitiesBtn);
+        siteMain.append(visitedContainer)
 
         clearCitiesBtn.addEventListener("click", () => {
             localStorage.removeItem("cityList")
