@@ -14,7 +14,7 @@ Tar alla städers ID ifrån localStorage och visar städernas namn samt alla inv
 const siteMain = document.getElementById ("siteMain");
 export function visitedCities(cities) {
     visitedBtn.addEventListener ("click", function() {
-
+        siteMain.innerHTML=""
         let getCityList = localStorage.getItem("cityList");
         let getCities = [];
         getCities = JSON.parse(getCityList);
