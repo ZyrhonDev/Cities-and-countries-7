@@ -19,11 +19,19 @@ export function visitedCities(cities) {
         let getCities = [];
         getCities = JSON.parse(getCityList);
 
-        console.log("storage listan: " + getCityList);
         let totalPopulation = document.createElement ("h3");
         let cityList = document.createElement ("ul");
         let populationAddition = 0;
-        siteMain.append (totalPopulation, cityList);
+        let clearCitiesBtn = document.createElement("button")
+        clearCitiesBtn.id = "clearCitiesBtn"
+
+        siteMain.append (totalPopulation, cityList, clearCitiesBtn);
+
+        clearCitiesBtn.addEventListener("click", () => {
+            localStorage.removeItem("cityList")
+            totalPopulation.innerText = "Total Population: ";
+            cityList.remove()
+        })
 
 for (let i = 0; i < getCities.length; i++) {
     let cityId = getCities[i];
@@ -35,7 +43,7 @@ for (let i = 0; i < getCities.length; i++) {
                         listCity.textContent = cities[r].stadname;
                     let totalPop = cities[r].population;
                     populationAddition += totalPop;
-                    totalPopulation.textContent = populationAddition;
+                    totalPopulation.textContent = "Total Population: " + populationAddition;
                     cityList.append (listCity);
                 }
             }
