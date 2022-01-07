@@ -25,6 +25,7 @@ export function visitedCities(cities) {
         let cityList = document.createElement ("ul");
         let populationAddition = 0;
         let clearCitiesBtn = document.createElement("button")
+        clearCitiesBtn.innerText = "Clear"
         clearCitiesBtn.id = "clearCitiesBtn"
 
         visitedContainer.append (totalPopulation, cityList, clearCitiesBtn);
