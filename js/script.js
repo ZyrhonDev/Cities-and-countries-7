@@ -6,7 +6,7 @@
 // ###########################
 import { renderCountries } from './nav.js';
 import { visitedCities } from './visited.js';
-import { addVisitedCity } from './addVisited.js';
+//import { addVisitedCity } from './addVisited.js';
 import { getCountries, getCities } from './fetch.js';
 import { addCityContainer, addCities, toggleCityView } from './clickOnCountry.js';
 import { addCityInfoWrapper } from './clickOnCity.js';
@@ -27,7 +27,6 @@ getCities().then(cities => {
         visitedCities(cities)
         toggleCityView(cities)
         addCityInfoWrapper(cities)
-        addVisitedCity(cities)
 
         // #########################################################
         // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##

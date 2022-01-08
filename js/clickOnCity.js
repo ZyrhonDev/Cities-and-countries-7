@@ -1,5 +1,6 @@
 import { wikiApi } from './wikiApi.js';
 import { weatherApi } from './weatherApi.js';
+import { addVisitedCity } from "./addVisited.js";
 
 export async function addCityInfoWrapper(cities) {
     // let populationContainer = document.createElement("div");
@@ -42,6 +43,7 @@ export async function addCityInfoWrapper(cities) {
                 if (userChoice === city.id){
                     // populationContainer.innerHTML="";
                     siteMain.innerHTML=""; 
+                    addVisitedCity(cities)
                     siteMain.append(cityHeading, populationNumber);
                     // infoContainer.innerHTML=""; 
                     // infoContainer.prepend(cityHeading);
