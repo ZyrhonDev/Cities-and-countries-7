@@ -1,5 +1,6 @@
 import { wikiApi } from './wikiApi.js';
 import { weatherApi } from './weatherApi.js';
+import { addVisitedCity } from "./addVisited.js";
 
 export async function addCityInfoWrapper(cities) {
     // let populationContainer = document.createElement("div");
@@ -31,7 +32,8 @@ export async function addCityInfoWrapper(cities) {
             //Printar population
             for (var i in cities){
                 // let populationContainer = document.getElementById("populationContainer"); 
-
+                addVisitedCity(cities)
+                
                 let cityHeading = document.createElement("h2");
                     cityHeading.innerText = cities[i].stadname;
                 let populationNumber = document.createElement("p");             

@@ -1,13 +1,12 @@
-
+let siteMain = document.getElementById("siteMain")
 export function addVisitedCity(cities) {
     const addVisited = document.createElement ("button");
     addVisited.textContent = "Besökt"
     addVisited.id = "addVisited"
     addVisited.style.cssText = "position: absolute; top: 1rem; right: 1rem;"; 
 
-    document.body.append(addVisited)
+    siteMain.append(addVisited)
     // Hämta localStorage och OM det redan finns något i den så parsar den och sparas i visitedCities, så vi kan lägga till saker efter det som redan finns.
-    
     
    function getListFromLS() {
     let visitedCities = JSON.parse(localStorage.getItem("cityList"))
@@ -17,7 +16,6 @@ export function addVisitedCity(cities) {
         } 
         return visitedCities;
     }
-
     let visitedCities = getListFromLS()
 
 // ########################################################################
@@ -26,20 +24,17 @@ export function addVisitedCity(cities) {
     addVisited.addEventListener ("click", function() {
     let selectedCity = localStorage.getItem("selectedCity");
 
-    cities.find((city) => {
-        if(selectedCity == city.stadname){
-            let cityToPush = city.id
+        cities.find((city) => {
+            if(selectedCity == city.stadname){
+                let cityToPush = city.id
 
-            let cityExist = visitedCities.find(visitedCity => visitedCity == cityToPush)
+                let cityExist = visitedCities.find(visitedCity => visitedCity == cityToPush)
 
-            if(!cityExist){
-                visitedCities.push(cityToPush)
-                localStorage.setItem("cityList", JSON.stringify(visitedCities))
+                if(!cityExist){
+                    visitedCities.push(cityToPush)
+                    localStorage.setItem("cityList", JSON.stringify(visitedCities))
+                }
             }
-        }
-    })
-
-    // visitedCities.push(selectedCity);
-    // localStorage.setItem("cityList", JSON.stringify(visitedCities));
+        })
     })
 }
