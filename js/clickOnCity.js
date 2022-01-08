@@ -32,7 +32,8 @@ export async function addCityInfoWrapper(cities) {
             //Printar population
             for (var i in cities){
                 // let populationContainer = document.getElementById("populationContainer"); 
-
+                addVisitedCity(cities)
+                
                 let cityHeading = document.createElement("h2");
                     cityHeading.innerText = cities[i].stadname;
                 let populationNumber = document.createElement("p");             
@@ -43,7 +44,6 @@ export async function addCityInfoWrapper(cities) {
                 if (userChoice === city.id){
                     // populationContainer.innerHTML="";
                     siteMain.innerHTML=""; 
-                    addVisitedCity(cities)
                     siteMain.append(cityHeading, populationNumber);
                     // infoContainer.innerHTML=""; 
                     // infoContainer.prepend(cityHeading);
