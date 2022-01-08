@@ -17,6 +17,11 @@ export function visitedCities(cities) {
         let visitedContainer = document.createElement("div")
         visitedContainer.id = "visitedContainer"
         siteMain.innerHTML=""
+
+        let visitedPageTitle = document.createElement("h2");
+            visitedPageTitle.innerText = "Besökta städer";
+            visitedPageTitle.id = "visitedPageTitle"
+
         let getCityList = localStorage.getItem("cityList");
         let getCities = [];
         getCities = JSON.parse(getCityList);
@@ -28,7 +33,7 @@ export function visitedCities(cities) {
         clearCitiesBtn.innerText = "Clear"
         clearCitiesBtn.id = "clearCitiesBtn"
 
-        visitedContainer.append (totalPopulation, cityList, clearCitiesBtn);
+        visitedContainer.append (visitedPageTitle, totalPopulation, cityList, clearCitiesBtn);
         siteMain.append(visitedContainer)
 
         clearCitiesBtn.addEventListener("click", () => {

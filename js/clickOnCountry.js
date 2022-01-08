@@ -1,4 +1,5 @@
 
+//Skapar en UL i varje stad med samma id som landets id i JSON filen
 export function addCityContainer(countries) {
 
     for (var i in countries){
@@ -16,6 +17,7 @@ export function addCityContainer(countries) {
 }
 
 
+//Matchar landets ID med countryid och appendar städer baserat på det
 export function addCities(cities) {
 
     for (var j in cities){ 
@@ -25,17 +27,18 @@ export function addCities(cities) {
             cityName.className = "city";
             cityName.id = cities[j].stadname
         let y = cities[j].countryid;
-        let country = document.getElementById(y)                
+        let cityContainer = document.getElementById(y)                
 
-        if(cities[j].countryid == country.id) {
-            document.getElementById(y).append(cityName)  
-            country.append(cityName) 
-        } 
+        if(cityContainer){
+            if(cities[j].countryid == cityContainer.id) {
+                document.getElementById(y).append(cityName)            
+            } 
+        }
     }
 }
 
     
-       
+//Togglar listan med städer       
 export async function toggleCityView() {
 
     let listCountries = document.querySelectorAll(".navCountry");
@@ -53,8 +56,7 @@ export async function toggleCityView() {
                     targetCountry.style.display = "none";
                 }  
 
-            };
-                                  
+            };                                  
         });
     });
 };  
