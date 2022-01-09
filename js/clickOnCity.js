@@ -32,7 +32,7 @@ export async function addCityInfoWrapper(cities) {
             //Printar population
             for (var i in cities){
                 // let populationContainer = document.getElementById("populationContainer"); 
-                addVisitedCity(cities)
+                
                 
                 let cityHeading = document.createElement("h2");
                     cityHeading.innerText = cities[i].stadname;
@@ -40,14 +40,16 @@ export async function addCityInfoWrapper(cities) {
                     populationNumber.innerText = `Population: ${cities[i].population}`;
                 let x = cities[i].stadname;
                 let city = document.getElementById(x);
-                    
-                if (userChoice === city.id){
-                    // populationContainer.innerHTML="";
-                    siteMain.innerHTML=""; 
-                    siteMain.append(cityHeading, populationNumber);
-                    // infoContainer.innerHTML=""; 
-                    // infoContainer.prepend(cityHeading);
-                };                
+                
+                if(city){
+                    if (userChoice === city.id){
+                        // populationContainer.innerHTML="";
+                        siteMain.innerHTML=""; 
+                        siteMain.append(cityHeading, populationNumber);
+                        // infoContainer.innerHTML=""; 
+                        // infoContainer.prepend(cityHeading);
+                    }; 
+                }               
             };
 
             //Wiki API
@@ -63,7 +65,7 @@ export async function addCityInfoWrapper(cities) {
 
 
             //Besökt knapp
-           
+            addVisitedCity(cities)
 
         })
     })
