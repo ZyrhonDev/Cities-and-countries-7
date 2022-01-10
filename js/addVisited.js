@@ -1,4 +1,13 @@
 let siteMain = document.getElementById("siteMain")
+///Bild och text till Framsidan
+let img = document.createElement("img")
+img.src = "./img/world.png";
+img.style.display = "block";
+img.style.marginTop = "-20px"
+let imgText = document.createElement("img")
+imgText.src = "./img/text.png"
+siteMain.append(img, imgText)
+
 export function addVisitedCity(cities) {
     const addVisited = document.createElement ("button");
     addVisited.textContent = "Besökt"
