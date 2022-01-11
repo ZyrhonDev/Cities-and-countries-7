@@ -15,9 +15,9 @@ export function addVisitedCity(cities) {
     addVisited.style.cssText = "position: absolute; top: 1rem; right: 1rem;"; 
 
     siteMain.append(addVisited)
-    // Hämta localStorage och OM det redan finns något i den så parsar den och sparas i visitedCities, så vi kan lägga till saker efter det som redan finns.
-    
-   function getListFromLS() {
+
+// Hämta localStorage och OM det redan finns något i den så parsar den och sparas i visitedCities, så vi kan lägga till saker efter det som redan finns.
+    function getListFromLS() {
     let visitedCities = JSON.parse(localStorage.getItem("cityList"))
 
         if (visitedCities == null) {
@@ -27,9 +27,9 @@ export function addVisitedCity(cities) {
     }
     let visitedCities = getListFromLS()
 
-// ########################################################################
-// ## LÄGGER TILL STÄDERS ID I LOCALSTORAGE, DUBLETTER KAN DOCK FÖREKOMMA##
-// ########################################################################
+
+//LÄGGER TILL STÄDERS ID I LOCALSTORAGE
+
     addVisited.addEventListener ("click", function() {
     let selectedCity = localStorage.getItem("selectedCity");
 

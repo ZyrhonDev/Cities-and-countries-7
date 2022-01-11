@@ -1,16 +1,4 @@
-/*
-Tar alla städers ID ifrån localStorage och visar städernas namn samt alla invånarantal ihopräknat. 
-*/
-
-// ################################################################################################
-// ##     FÖRSÖKTE FÅ DE BESÖKTA LÄNDERNA ATT PRINTAS TILL INFOCONTAINER MEN VERKAR INTE FUNKA   ##
-// ##   OM JAG HAR SITEMAIN.INNERHTML = "" FÖR ATT RENSA(GÖRA NY SIDA FÖR BESÖKTA STÄDER VYN)    ##
-// ## SÅ FUNKAR INTE MENYKNAPPARNA FÖR DE OLIKA STÄDERNA LÄNGRE, FÖR ATT CONTAINRARNA FÖRSVINNER ##
-// ################################################################################################
-// let populationContainer = document.getElementById ("populationContainer");
-// let weatherContainer = document.getElementById ("weatherContainer");
-// let infoContainer = document.getElementById ("infoContainer");
-// let picContainer = document.getElementById ("picContainer");
+// Tar alla städers ID ifrån localStorage och visar städernas namn samt alla invånarantal ihopräknat. 
 const siteMain = document.getElementById ("siteMain");
 export function visitedCities(cities) {
     visitedBtn.addEventListener ("click", function() {

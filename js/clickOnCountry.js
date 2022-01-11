@@ -1,4 +1,3 @@
-
 //Skapar en UL i varje stad med samma id som landets id i JSON filen
 export function addCityContainer(countries) {
 
