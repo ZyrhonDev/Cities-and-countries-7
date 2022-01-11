@@ -1,6 +1,4 @@
-/* 
-Skapa <nav> och appenda till #siteHeader
-*/  
+// Skapa <nav> och appenda till #siteHeader
 
 // Hämtar, skapar & appendar nav till sidan.
 const siteHead = document.getElementById ("siteHeader");
@@ -13,9 +11,9 @@ siteHead.append (countryMenu);
 countryMenu.append (visitedBtn);
 
 
-/* 
-    Skapa lista från API och rendera i nav
-*/
+
+// Skapa lista från API och rendera i nav
+
 
 export function renderCountries(countries) {
     let countryList = document.createElement("ul")

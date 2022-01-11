@@ -1,12 +1,8 @@
-
-
-
 // ###########################
 // ## IMPORTERA MODULES HIT ##
 // ###########################
 import { renderCountries } from './nav.js';
 import { visitedCities } from './visited.js';
-//import { addVisitedCity } from './addVisited.js';
 import { getCountries, getCities } from './fetch.js';
 import { addCityContainer, addCities, toggleCityView } from './clickOnCountry.js';
 import { addCityInfoWrapper } from './clickOnCity.js';
@@ -27,18 +23,5 @@ getCities().then(cities => {
         visitedCities(cities)
         toggleCityView(cities)
         addCityInfoWrapper(cities)
-
-        // #########################################################
-        // ## EXEMPEL PÅ ATT VISA INVÅNARE PÅ KNAPPTRYCK I MENYN  ##
-        // #########################################################
-        // navBar.addEventListener ("click", function (evt) {
-        //         console.log(evt.target.id);
-        //         for (let i = 0; i < cities.length; i++) {
-        //                 if (evt.target.id == cities[i].id) {
-        //                         mainText.innerHTML = "";
-        //                         mainText.innerText = "invånarantal: " + cities[i].population;
-        //                 }
-        //         }
-        // })
 });
 
